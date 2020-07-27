@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Matrix</title>
+    <link>http://matrix-lisp.github.io/post/</link>
+    <description>Recent content in Posts on Matrix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Feb 2016 13:42:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://matrix-lisp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>程序员的极品毒物-HHKB Pro Type-S 静电容键盘</title>
+      <link>http://matrix-lisp.github.io/post/2016-02-14-keyboard-hhkb/</link>
+      <pubDate>Sun, 14 Feb 2016 13:42:00 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2016-02-14-keyboard-hhkb/</guid>
+      <description>缘起 圣诞节的时候送给老婆一块机械腕表，然后就开始琢磨着给自己整点啥呢，想来想去，哎！可以烧一烧外设啊，整把机械键盘感受一下吧。 然后就开始了各</description>
+    </item>
+    
+    <item>
+      <title>MySQL自定义函数实现JSON数据的聚合</title>
+      <link>http://matrix-lisp.github.io/post/2015-03-20-mysql-udf/</link>
+      <pubDate>Sat, 21 Mar 2015 08:21:48 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2015-03-20-mysql-udf/</guid>
+      <description>需求 表中某个字段为json格式: 1 2 {k1: v1, k2: v2} {k1: v3, k2: v4, k3: v6} 需要聚合为: 1 {k1: v1+v3, k2: v2+v4, k3: v6} 实现 通过自定义函数实现: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
+    </item>
+    
+    <item>
+      <title>Project Euler 第15题</title>
+      <link>http://matrix-lisp.github.io/post/2015-01-01-euler-015/</link>
+      <pubDate>Thu, 01 Jan 2015 10:11:28 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2015-01-01-euler-015/</guid>
+      <description>Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法,</description>
+    </item>
+    
+    <item>
+      <title>高考</title>
+      <link>http://matrix-lisp.github.io/post/2009-06-09-gao-kao-liu-zhou-nian/</link>
+      <pubDate>Tue, 09 Jun 2009 11:27:37 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2009-06-09-gao-kao-liu-zhou-nian/</guid>
+      <description>&lt;p&gt;六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。&lt;/p&gt;
+
+&lt;p&gt;匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。&lt;/p&gt;
+
+&lt;p&gt;九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

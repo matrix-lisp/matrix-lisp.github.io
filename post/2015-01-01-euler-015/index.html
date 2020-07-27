@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Project Euler 第15题 - Matrix</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="matrix-lisp" /><meta name="description" content="Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法," /><meta name="keywords" content="matrix, 数学, 编程, 历史, 阅读, 写作" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.0 with theme even" />
+
+
+<link rel="canonical" href="http://matrix-lisp.github.io/post/2015-01-01-euler-015/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.c40e4a9d9836c07298b8a199928e888379a98adb7ad14923620e1efda5b116db.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+<meta property="og:title" content="Project Euler 第15题" />
+<meta property="og:description" content="Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://matrix-lisp.github.io/post/2015-01-01-euler-015/" />
+<meta property="article:published_time" content="2015-01-01T10:11:28+08:00" />
+<meta property="article:modified_time" content="2020-07-12T22:40:26+08:00" />
+<meta itemprop="name" content="Project Euler 第15题">
+<meta itemprop="description" content="Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法,">
+<meta itemprop="datePublished" content="2015-01-01T10:11:28&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-12T22:40:26&#43;08:00" />
+<meta itemprop="wordCount" content="3361">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project Euler 第15题"/>
+<meta name="twitter:description" content="Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法,"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Matrix</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Matrix</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Project Euler 第15题</h1>
+
+      <div class="post-meta">
+          <span class="post-time"><i class="fa fa-calendar" aria-hidden="true"></i> 2015-01-01 </span>
+        
+        <span class="more-meta"><i class="fa fa-book" aria-hidden="true"></i> 约 3361 字 </span>
+        <span class="more-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 预计阅读 7 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"><i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#project-euler">Project Euler</a></li>
+<li><a href="#第15题">第15题</a></li>
+<li><a href="#思路过程">思路过程</a>
+<ul>
+<li><a href="#路径查找">路径查找</a>
+<ul>
+<li><a href="#第一条路径">第一条路径</a></li>
+<li><a href="#第二条路径">第二条路径</a></li>
+<li><a href="#第三条路径">第三条路径</a></li>
+<li><a href="#第四-五-六条路径">第四、五、六条路径</a></li>
+<li><a href="#代码实现">代码实现</a></li>
+</ul></li>
+<li><a href="#计算次数-递归方法">计算次数-递归方法</a>
+<ul>
+<li><a href="#代码实现-1">代码实现</a></li>
+</ul></li>
+<li><a href="#计算次数-循环方法">计算次数-循环方法</a>
+<ul>
+<li><a href="#代码实现-2">代码实现</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#终极解法">终极解法</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="project-euler">Project Euler</h2>
+
+<p>最近在刷<a href="https://projecteuler.net/">Project Euler</a>的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法, 尤其适合对数学和编程感兴趣的人。对它不了解的人可以在<a href="http://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92">维基</a>的这个页面查看相关介绍, 而且国内已经有人做了一个<a href="http://pe.spiritzhang.com/">中文翻译站</a>, 有时间的时候刷一刷还挺有意思的。</p>
+
+<h2 id="第15题">第15题</h2>
+
+<p>进展一直很顺利, 但是到第15题的时候发现提交答案的人数一下少了很多, 心想看来这道题目有点难度啊。尝试了一下, 第一次的算法可行, 但是经过测算需要几千小时。。。。。。继续改进, 还是太慢, 最后, 终于达到了毫秒级别！所以就感觉这个思考的过程还是挺有意思的。
+从一个2×2网格的左上角开始, 有6条（不允许往回走）通往右下角的路。</p>
+
+<p><img src="/images/euler/proj_euler_015.gif" alt="" /></p>
+
+<p>对于20×20的网格, 这样的路有多少条？</p>
+
+<!-- more -->
+
+<h2 id="思路过程">思路过程</h2>
+
+<h3 id="路径查找">路径查找</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">0,0  0,1  0,2
+1,0  1,1  1,2
+2,0  2,1  2,2</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="第一条路径">第一条路径</h4>
+
+<p>首先结合上面的图观察它的坐标变化：
+从起始点<code>(0,0)</code>开始, 向右有<code>(0,1)</code>和向下有<code>(1,0)</code>, 两个方向都可以;
+而图中第一条路径选择向右, 因此我们可以记录路径为<code>(0,0) → (0,1)</code>, 可选的坐标列表为<code>(1,0)</code>;
+此时向右有<code>(0,2)</code>和向下有<code>(1,1)</code>, 两个方向都可以;
+结合图中的第一条路径, 我们还是选择向右, 因此记录路径为<code>(0,0) → (0,1) → (0,2)</code>, 可选的坐标列表变为<code>(1,0), (1,1)</code>;
+此时向右没有坐标, 向下有<code>(1,2)</code>, 和图中第一条路径相符, 因此记录路径为<code>(0,0) → (0,1) → (0,2) → (1,2)</code>;
+同上, 向右没有坐标, 向下有<code>(2,2)</code>, 和图中第一条路径相符, 因此记录路径为<code>(0,0) → (0,1) → (0,2) → (1,2) → (2,2)</code>;</p>
+
+<h4 id="第二条路径">第二条路径</h4>
+
+<p>很明显, 对于<code>(1,2)</code>和<code>(2,2)</code>都是因为向下没有坐标了, 因此要寻找新的路线肯定要回退到有两个方向可选的那个坐标, 然后再继续这个过程。
+第一条路径为<code>(0,0) → (0,1) → (0,2) → (1,2) → (2,2)</code>, 记录下来的可选坐标列表为<code>(1,0), (1,1)</code>;
+路径中最后一个出现两个方向的坐标为<code>(0,1)</code>, 因此需要回退到这里, 路径变为<code>(0,0) → (0,1)</code>;
+从可选坐标列表中取出最后一个坐标作为新的方向, 路径变为<code>(0,0) → (0,1) → (1,1)</code>, 可选的坐标列表为<code>(1,0)</code>;
+此时向下有<code>(2,1)</code>, 则可选的坐标列表变为<code>(1,0), (2,1)</code>, 向右有<code>(1,2)</code>, 则路径变为<code>(0,0) → (0,1) → (1,1) → (1,2)</code>;
+向右没有坐标, 向下有<code>(2,2)</code>, 和图中第二条路径相符, 因此记录路径为<code>(0,0) → (0,1) → (1,1) → (1,2) → (2,2)</code>;</p>
+
+<h4 id="第三条路径">第三条路径</h4>
+
+<p>同样的回退策略, 回退到坐标<code>(1,1)</code>, 再使用同样的前进策略, 得到路径<code>(0,0) → (0,1) → (1,1) → (2,1) → (2,2)</code></p>
+
+<h4 id="第四-五-六条路径">第四、五、六条路径</h4>
+
+<p>同样的回退和前进策略, 即可得到第四、五、六条路径</p>
+
+<h4 id="代码实现">代码实现</h4>
+
+<p>根据以上的前进、回退策略, 结合栈即可实现如下的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">path_count</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="c1"># 用于记录路径</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 用于记录出现分支时向下的点坐标</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 坐标值和路径次数</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># 用于记录路径次数</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># 将起始点(0, 0)放入路径中</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># 为路径中的最后一个点查找下一个点</span>
+        <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># 是否可以继续向下</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="c1"># 是否可以继续向右</span>
+            <span class="k">if</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span>
+                <span class="c1"># 出现分支时将向下的点坐标存入temp以备回退, 向右的点坐标存入stack作为路径</span>
+                <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># 只能向下则直接将向下的点坐标存入路径</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 只能向右则直接将向右的点坐标存入路径</span>
+            <span class="k">if</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># 路径中的最后一个点坐标是否为终点</span>
+        <span class="k">if</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+            <span class="c1"># 此时可打印查看路径</span>
+            <span class="k">print</span> <span class="n">stack</span>
+
+            <span class="c1"># 路径次数增加</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># 可选的坐标列表为空时退出循环</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="c1"># 回退操作</span>
+            <span class="c1"># 取出最后一个出现分支时向下的那个点坐标</span>
+            <span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">tj</span><span class="p">)</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+            <span class="c1"># 依次取出路径中的坐标, 直到此坐标与(ti, tj)互为一个分支节点的向右和向下节点</span>
+            <span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">sj</span><span class="p">)</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="p">(</span><span class="n">si</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="n">ti</span> <span class="ow">and</span> <span class="n">tj</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="n">sj</span><span class="p">):</span>
+                <span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">sj</span><span class="p">)</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+            <span class="c1"># 将最后一个出现分支时向下的那个点坐标添加到路径中</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ti</span><span class="p">,</span> <span class="n">tj</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">count</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>运行以上代码即可得到如下六条<code>2x2</code>网格的路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[(0, 0), (0, 1), (0, 2), (1, 2), (2, 2)]
+[(0, 0), (0, 1), (1, 1), (1, 2), (2, 2)]
+[(0, 0), (0, 1), (1, 1), (2, 1), (2, 2)]
+[(0, 0), (1, 0), (1, 1), (1, 2), (2, 2)]
+[(0, 0), (1, 0), (1, 1), (2, 1), (2, 2)]
+[(0, 0), (1, 0), (2, 0), (2, 1), (2, 2)]</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="计算次数-递归方法">计算次数-递归方法</h3>
+
+<p>虽然以上代码可以求得<code>nxn</code>网格的路径, 但是换到<code>20x20</code>时它复杂的入栈出栈操作会拖累整个运行时间, 使用这个办法求解次数显然是不行的, 只能继续查找一些规律了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">0,0  0,1  0,2  0,3
+1,0  1,1  1,2  1,3
+2,0  2,1  2,2  2,3
+3,0  3,1  3,2  3,3</code></pre></td></tr></table>
+</div>
+</div>
+<p>画出一个<code>3x3</code>的网格来, 想着<code>2x2</code>的时候从起始点<code>(0,0)</code>出发, 首先选择向右有三条路径, 然后<code>3*2=6</code>, 同理, 对于<code>3x3</code>的网格来说, 总共有20条路径, 从起始点出发, 选择向右则有10条路径, 那么这十条路线是如何得到的呢?
+从<code>(0,0)</code>出发, 只考虑向右的<code>(0,1)</code>这个方向, 因为向下向右两个方向对称, 所以<code>20/2=10</code>;
+而对于<code>(0,1)</code>来说, 它也有两个方向<code>(1,1)</code>和<code>(0,2)</code>, 则可知这十条路径即为在这两个方向产生的;
+对于<code>(1,1)</code>来说, 它到底终点<code>(3,3)</code>其实即为一个<code>2x2</code>网格, 因此这个方向有6条路径, 那么<code>(0,2)</code>将贡献4条路径;
+经过验证, 对于<code>3x1</code>网格来说确实有4条路径;
+由此我们即可得到: <code>f(3, 3) = [f(2, 2) + f(3,1)]*2</code>
+进而进行推广: <code>f(n, n) = [f(n-1, n-1) + f(n, n-2)]*2</code>
+显然, 有<code>f(1, 1) = 2</code>和<code>f(n, 0) = 1</code>
+于是就可以采用递归方式来实现了</p>
+
+<h4 id="代码实现-1">代码实现</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 递归求解 nxm 网格的路径</span>
+<span class="k">def</span> <span class="nf">func_iter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">func_iter</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">func_iter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">func_iter</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="n">func_iter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 尾递归求解 nxn 网格的路径</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span> <span class="o">+</span> <span class="n">func_iter</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">count</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>但是很不幸, 虽然这种实现并没用记录具体的路径, 但是递归的次数还是太多, 而且在计算<code>n*m</code>网格时存在太多的重复计算导致仍然会消耗比较多的时间, 因此如果能记录下已经计算出结果的<code>n*m</code>, 那么速度将会大大提高。</p>
+
+<h3 id="计算次数-循环方法">计算次数-循环方法</h3>
+
+<p>根据<code>f(3, 3) = [f(2, 2) + f(3, 1)]*2</code>, 可知问题出在<code>f(3, 1)</code>需要计算, 同理对于<code>f(4, 4) = [f(3, 3) + f(4, 2)]*2</code>, 其中<code>f(4, 2)</code>也需要计算, 继续按照分解<code>f(3, 3)</code>到<code>f(2, 2)</code>的过程, 可以得到:
+<code>f(4, 2) = f(3, 2) + f(4, 1)</code>
+<code>f(3, 2) = f(2, 2) + f(3, 1)</code>
+于是推得公式: <code>f(n, m) = f(n-1, m) + f(n, m-1)</code>
+根据这个公式可以发现一些比较有意思的事情, 比如当<code>m = 1</code>时有<code>f(n, 1) = f(n-1, 1) + f(n, 0)</code>， 而<code>f(n, 0) = 1</code>, 所以有<code>f(n, 1) = f(n-1, 1) + 1</code>, 同理对<code>f(n-1, 1)</code>展开, 得到<code>f(n, 1) = f(n-2, 1) + 2</code>, 这样最后将得到<code>f(n, 1) = n+1</code>。
+同样的推理过程, <code>f(n, 2) = f(n-1, 2) + f(n, 1)</code>即为<code>f(n, 2) = f(n-1, 2) + (n+1)</code>, 这样即可得知:
+<code>f(n, 1)</code>的值是一个等差数列, <code>f(n, 2)</code>前项减后项的值是一个等差数列, 进而推广到<code>f(n, 3)</code>需要做两次差才能得到等差数列。
+取<code>n = 4</code>进行验证:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">f(n, 0) = 1
+f(1, 1) = 2    f(2, 2) = 6     f(3, 3) = 20    f(4, 4) = 70
+f(2, 1) = 3    f(3, 2) = 10    f(4, 3) = 35    f(5, 4) = 126
+f(3, 1) = 4    f(4, 2) = 15    f(5, 3) = 56    f(6, 4) = 210
+f(4, 1) = 5    f(5, 2) = 21    f(6, 3) = 84
+f(5, 1) = 6    f(6, 2) = 28
+f(6, 1) = 7</code></pre></td></tr></table>
+</div>
+</div>
+<p>对<code>f(n, 3)</code>进行验证, 前项减后项, 做两次即可得到等差数列, 进而即可发现:
+求解<code>f(3, 3)</code>时, 由<code>f(3, 3) = [f(2, 2) + f(3, 1)]*2</code>可以得到
+求解<code>f(4, 4)</code>时, 由<code>f(4, 4) = [f(3, 3) + f(4, 2)]*2</code>可以得到
+因此对于<code>f(n, n)</code>来说, 使用公式<code>f(n, n) = [f(n-1, n-1) + f(n, n-2)]</code>降维后可由前面的值组合而成, 因此即可得到如下求解过程:
+要求<code>f(3, 3)</code>, 其中<code>f(n, 0) = 1, f(n, 1) = n+1</code>为已知项, 进而可得到如下推导过程:
+<code>f(2, 2) = [f(1, 1) + f(2, 0)]*2 = (2+1)*2 = 6</code>
+<code>f(3, 2) = f(2, 2) + f(3, 1) = 6+4 = 10</code>
+<code>f(3, 3) = [f(2, 2) + f(3, 1)]*2 = (6+4)*2 = 20</code>
+对<code>f(4, 4)</code>进行验证, 仍然可以使用此方法得到正确结果, 因此对于<code>f(n, n)</code>可以依次求解<code>f(n, m), m从 0 到 n</code>来求解。</p>
+
+<h4 id="代码实现-2">代码实现</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 使用字典存储依次求解的f(n, m)的值, 其中f(n,1) = n+1, f(n,0) = 0记为已知项</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([((</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># f(n, 0), f(n, 1) 已经放入字典中, 因此 m 从 2 循环到 n</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="c1"># 对于每个 m 值, 求解f(m, m), f(m+1, m), ..., f(n, m), 因此需要使用idx记录这个变化过程</span>
+        <span class="k">while</span> <span class="n">idx</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span><span class="p">[(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="p">)])</span><span class="o">*</span><span class="mi">2</span>
+                <span class="k">print</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="p">),</span> <span class="p">(</span><span class="n">d</span><span class="p">[(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="p">)])</span><span class="o">*</span><span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[(</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[(</span><span class="n">idx</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+            <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">m</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>使用此方法求解时间即可达到毫秒级别。</p>
+
+<h2 id="终极解法">终极解法</h2>
+
+<p>提交答案后可以查看其他人提交的解法, 这才知道原来这个问题求解的是<a href="http://en.wikipedia.org/wiki/Catalan_number">卡塔兰数</a>, 看题目给出的<code>2x2</code>网格的路径图, 从起点到终点共有四步, 这四步中必然有横着的两步和竖着的两步, 所以总路径数其实就是从四步中挑选两横两竖的组合有多少种, 因此这就转化成了一个排列组合问题!
+而对于排列组合<code>从2n中选择n个</code>的求解有公式<code>(2n)!/(n!)^2</code>, 因此这个问题就可以直接套用公式来求解了！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">matrix-lisp</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-07-12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">自由转载-非商用-非衍生-保持署名(<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">创意共享4.0许可证</a>)</span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-03-20-mysql-udf/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MySQL自定义函数实现JSON数据的聚合</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2009-06-09-gao-kao-liu-zhou-nian/">
+            <span class="next-text nav-default">高考</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'matrixlisp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:matrix.lisp@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/matrix-lisp" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/matrix-lisp/" class="iconfont icon-douban" title="douban"></a>
+  <a href="http://matrix-lisp.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2009 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">matrix-lisp</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.dce0c2513349d6ed410e4d99885aeefcb3b8fc9a34962e5b68f649e593c593d7.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48828428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

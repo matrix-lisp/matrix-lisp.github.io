@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Matrix</title>
+    <link>http://matrix-lisp.github.io/categories/</link>
+    <description>Recent content in Categories on Matrix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Feb 2016 13:42:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://matrix-lisp.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>键盘</title>
+      <link>http://matrix-lisp.github.io/categories/%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sun, 14 Feb 2016 13:42:00 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/categories/%E9%94%AE%E7%9B%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>http://matrix-lisp.github.io/categories/mysql/</link>
+      <pubDate>Sat, 21 Mar 2015 08:21:48 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Euler</title>
+      <link>http://matrix-lisp.github.io/categories/euler/</link>
+      <pubDate>Thu, 01 Jan 2015 10:11:28 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/categories/euler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中文</title>
+      <link>http://matrix-lisp.github.io/categories/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Tue, 09 Jun 2009 11:27:37 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/categories/%E4%B8%AD%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

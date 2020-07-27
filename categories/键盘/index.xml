@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>键盘 on Matrix</title>
+    <link>http://matrix-lisp.github.io/categories/%E9%94%AE%E7%9B%98/</link>
+    <description>Recent content in 键盘 on Matrix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Feb 2016 13:42:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://matrix-lisp.github.io/categories/%E9%94%AE%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>程序员的极品毒物-HHKB Pro Type-S 静电容键盘</title>
+      <link>http://matrix-lisp.github.io/post/2016-02-14-keyboard-hhkb/</link>
+      <pubDate>Sun, 14 Feb 2016 13:42:00 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2016-02-14-keyboard-hhkb/</guid>
+      <description>缘起 圣诞节的时候送给老婆一块机械腕表，然后就开始琢磨着给自己整点啥呢，想来想去，哎！可以烧一烧外设啊，整把机械键盘感受一下吧。 然后就开始了各</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://matrix-lisp.github.io/sitemap.xml

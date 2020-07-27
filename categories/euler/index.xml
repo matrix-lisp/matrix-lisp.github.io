@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Euler on Matrix</title>
+    <link>http://matrix-lisp.github.io/categories/euler/</link>
+    <description>Recent content in Euler on Matrix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 01 Jan 2015 10:11:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://matrix-lisp.github.io/categories/euler/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project Euler 第15题</title>
+      <link>http://matrix-lisp.github.io/post/2015-01-01-euler-015/</link>
+      <pubDate>Thu, 01 Jan 2015 10:11:28 +0800</pubDate>
+      
+      <guid>http://matrix-lisp.github.io/post/2015-01-01-euler-015/</guid>
+      <description>Project Euler 最近在刷Project Euler的题目, 非常有意思, 都是一些有着简短描述的数学题目, 而且提交答案只需要最终结果, 所以不限语言, 不限方法,</description>
+    </item>
+    
+  </channel>
+</rss>

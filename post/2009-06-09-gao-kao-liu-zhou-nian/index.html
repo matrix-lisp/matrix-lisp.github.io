@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>高考 - Matrix</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="matrix-lisp" /><meta name="description" content="六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。
+匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。
+九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。
+" /><meta name="keywords" content="matrix, 数学, 编程, 历史, 阅读, 写作" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.71.0 with theme even" />
+
+
+<link rel="canonical" href="http://matrix-lisp.github.io/post/2009-06-09-gao-kao-liu-zhou-nian/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.c40e4a9d9836c07298b8a199928e888379a98adb7ad14923620e1efda5b116db.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+<meta property="og:title" content="高考" />
+<meta property="og:description" content="六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。
+
+匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。
+
+九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://matrix-lisp.github.io/post/2009-06-09-gao-kao-liu-zhou-nian/" />
+<meta property="article:published_time" content="2009-06-09T11:27:37+08:00" />
+<meta property="article:modified_time" content="2020-07-12T22:29:02+08:00" />
+<meta itemprop="name" content="高考">
+<meta itemprop="description" content="六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。
+
+匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。
+
+九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。">
+<meta itemprop="datePublished" content="2009-06-09T11:27:37&#43;08:00" />
+<meta itemprop="dateModified" content="2020-07-12T22:29:02&#43;08:00" />
+<meta itemprop="wordCount" content="4953">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="高考"/>
+<meta name="twitter:description" content="六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。
+
+匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。
+
+九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Matrix</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Matrix</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">高考</h1>
+
+      <div class="post-meta">
+          <span class="post-time"><i class="fa fa-calendar" aria-hidden="true"></i> 2009-06-09 </span>
+        
+        <span class="more-meta"><i class="fa fa-book" aria-hidden="true"></i> 约 4953 字 </span>
+        <span class="more-meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 预计阅读 10 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"><i class="fa fa-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>六月八号，高考的最后一天，早上不知道是几点的一个响雷，让我从睡梦中惊醒，天已经蒙蒙亮了，但看的出来的很阴，昨晚上扫雷扫的有点劲头太足，直接导致了今天起床的劲头不足，当再醒的时候，已经是快八点半了。</p>
+
+<p>匆匆忙忙上了公交车，快九点的车上人确实不多，但是因为下雨、高考和周一的原因吧，路上堵的不行，车走了几站，人还是多了起来，窗户上蒙了一层水汽，慢慢的，窗外的一切，已经朦朦胧胧了。</p>
+
+<p>九一年，东欧巨变，学前班毕业，开始上小学一年级，跟着学校组织的沿街游行高喊口号，被踩掉了几双鞋；九七年，香港回归，小学毕业，开始上初中一年级，然后记住了那句：一场大水没咋的；零零年，千禧之年，初中毕业，开始上高中一年级，进了次派出所，记住了有个老师因为放两个学生出去而懊悔被哥斯达黎加进了两个球的经典笑话；零三年，非典肆虐，记住了终生难忘的高考。</p>
+
+<p>那年六月八号早上的这个时候，想的是什么呢？那年的高考，数学是第几场考的呢？大概经历过那年高考的，最不能忘记的就是那年的数学考试了吧，好像当时考完出来天还正下着雨，正好也符合大部分人的心情，后来听说别的省份还有人因为那场数学考试直接跳楼，真不知道这些人是怎么想的，我们几个当时考完出来碰了面还笑的非常嚣张，我们是怎么想的，到现在也已经不知道了，只是还记得早上早早就醒了，但是四周异常的安静，谁都睡不着了却谁也没有早早起来，趴在床上，看着操场上有些人，跑了一圈又一圈，他们在想些什么呢？考完后等车的空挡，操场上有人踢球，我是上了还是没上呢？都已经想不起来了。</p>
+
+<p>然后，没有走成，又回到了学校，当半夜十二点我和同学一起上宿舍楼楼顶踢球时，我就知道我已经不在乎这个高考了。</p>
+
+<p>当时膝盖受了伤，又是贴膏药又是吃那个叫什么药来着，反正是没有断过，因为刚刚好一点我就又去踢球了，于是膝盖的伤一直反复，好像是叫滑膜炎还是什么来着，过去太长时间，都已经想不起来了。就是这样，到了晚上十二点多还是会上楼顶去踢球，现在想起来都有点不可思议，当时我的眼镜就已经八百多度了，按照那个叫什么上弦月下弦月的说法，月亮也不能一直都那么亮，咋我就记得当时好像天天都会去上去踢球呢。有这种爱好的还不在少数，而且还不全是男生，对面女生宿舍楼顶上有的时候也会有几个黑乎乎的人影晃动，有的时候也会有点火光，女生郁闷的时候也会抽抽烟，或许是这样。更有的时候在对面的水房里还会有哗、哗、哗的倒水声，很像是接满了一盆水，举过头顶，一倒，哗。。。或许是这样。</p>
+
+<p>高一高二的都放假还在家里，只有我们才会在这样一个季节还留在学校里，炎热、烦躁，让人很有必要在查夜的老师都走了之后出来转转，凉快凉快，放松放松。因为高一高二的放假的时间太长，而高三的不放假的时间又太长，所以当走到空荡荡的属于他们的楼道时，找到一个早就被踢开门并且里面本来就已经乱的不行的宿舍并不困难，躺在空空的床铺上，脚耷拉在窗外，和同学有一句没一句的聊着天，聊的是什么，早已经忘的一干二净，只记得半夜一两点冲个澡再在上面躺一会，就会冷的不行，就得赶紧跑下去回到自己的宿舍捂上被子睡觉。</p>
+
+<p>然后他们也开学了，哦不，上面说错了，高一的还没有来，因为他们是要新入学的，这帮家伙的到来，很容易引起高年级的兴奋，但是经历过几次后，麻木了，我们还是有我们自己的娱乐方式。当某个同学过生日的时候，把被子搭在上铺，垂下来，把下铺唔得严严实实，十几个人就伸着个脑袋在里面碰杯，一般上铺还会有人放哨，一瓶酒，一袋蚕豆，吃的差不多了下来再抓点，或者换个已经喝的差不多的想歇着的上去盯梢。要说这个还得说这高中的老师比较坚强，白天上一天的课晚上还有精力来逮不好好休息的学生，整的学生们绞尽脑汁想办法来对付，像现在上班，白天忙一天了，晚上能有几个继续学习，或者发现自己项目中的不足的？所以，得向老师致敬。大学寒假回来，碰上以前的同学，说老师训他的时候还在拿我举例子，汗。学习好的学生，老师总会拿出来炫耀，毕竟，好学生就是老师最大的光荣，是证明自己最好的认证，这应该就像我们总是喜欢吹嘘自己在项目中实现的某某功能一样，这无可厚非。但是学习不好的学生或者没有学好的学生，老师也会经常拿出来讲讲，做个反面教材嘛，很不幸，我属于后者，那么从这一点来讲的话，我们就不如老师了，因为我们一向只是吹嘘项目中成功的地方，而很少讲到项目失败的地方，不懂得从失败中反思自己，所以，再次向老师致敬。</p>
+
+<p>恩，看来上学和做项目还真的有几分相像，那时候好多人都会抱怨什么自己在这个班不好，这个老师不好，就好像现在经常会有人抱怨公司不好，待遇不好，但是在哪个班里都会有学的好的学生和考的好的学生，在每个公司也都有那么几个或一两个让人从技术到为人都佩服的大牛，环境改变人还是人改变环境？</p>
+
+<p>有好几次跳墙出去，忘了是出去干啥了，但被抓住的那次是出去买足球的原因。以前跳墙出去都会挑个已经开始上晚自习的时候才会回来，夜深人静，借个开门的机会，撒丫子就往学校里跑，警卫扯着嗓子喊也管，一直穿过教学楼，跑进宿舍，换身衣服，从侧门再溜进教学楼，碰见有人问看见什么人没就说自己上厕所去了，啥也没看见。</p>
+
+<p>晚上宿舍楼顶踢球时从上面掉了下去，那高度，还是半夜，还是水泥地，由自由落体运动公式，和动能势能转换公式，和球体最大截面面积，所以在“砰”的一声后，我们就一溜烟的跑回了宿舍。球没了，下午有时间踢球，怎么办，跳墙出去买一个。但是这次不能等到上晚自习，结果，大摇大摆的从门口进时被拦住了，班主任被叫了过来。自从有此校长和另外一个老师，蹲在墙下准备逮住半夜跳墙出去上网的学生，结果因为去上网的学生太多反而把他们俩殴了一顿之后，学校就对私自外出管的很严格了。我和同学被要求写检查。写的时候感觉没词，我们俩在商量的时候正好又被班主任看到，于是，检查写好后被贴在了教室门口的墙上，一直贴到高考，我近视的厉害，啥时候我同学的检查已经撕掉了我也不知道，反正是当我最后注意到时，已经只能看到我自己的“真迹”了。</p>
+
+<p>时间晃晃悠悠的，本来以为就这样走到高考了，但最后一次模考时又出了点事。因为又到了夏天，人们又变的有点烦躁，每到漫漫长夜，好像总是无心睡眠，好像每到这个时候总是要自己折腾折腾自己，但是还好，高考一年才一次。</p>
+
+<p>那天几个人嫌宿舍热，想出去又怕被老师看到，在阳台上蹲着侃大山，都跑阳台上去了，也没人和我扯淡了，迷迷糊糊刚要睡着了，隐约听到好像有小孩的哭声。以前就听这边的同学说过，什么学校以前是片坟地，什么看见这个了看见那个了，整的好像真有那么回事一样。我是确实不信这个，但猛的一听见那个声音还是被吓了一跳。几个在阳台上的已经炸开锅了，非说是有小孩被拐卖了，有生女孩的家里不想要被扔出来了，几个人一合计，上宿舍楼楼顶去看看是哪个方向。楼顶上还有个小屋，我们上到小屋的顶上开始注意观察，居然还发现下面的麦子地里好像有人在抽烟，一亮一亮的，然后听那哭声好像就是从那儿传来的！人们开始商量怎么办，去找手机，打 110 ，但是又想再仔细观察观察，确定了确实是拐卖小孩的再说。几个人下去找手机和烟抽了，几个人留下来还在屋顶继续观察。</p>
+
+<p>下面有穿着拖鞋塔拉塔拉的声音，往下一看，两个人抽着烟到了楼顶，还以为两个人上来乘凉来了，就扭过头继续观察。“我 * 你妈！”，“你妈 * ！”，汗，再扭过去一看，两个人穿着凉拖已经动上手了。还真有瘾，大晚上的两个人跑楼上单挑来了。人们正看的过瘾，看两个黑影晃来晃去的，一边骂着一边打着，楼顶另外一头的出口突然几束灯光，“站住，别动！”，上来了几个老师，两人立刻不打了，撒丫子就往这边的出口往下跑，这下倒是比较齐心，一下就跑没影了。我们这个笑啊，看了这么一出好戏，正好这个时候下去找烟的同学上来了，真奇怪他们怎么没和老师走碰头呢？还正在屋顶上给他们讲述碰见两个人怎么打架怎么被老师吓跑呢，结果，楼顶上有人说话了，“都下来吧，都躲上面干吗”。</p>
+
+<p>虽然我们没参与打架，但这半夜不睡觉跑楼顶的小屋上来也罪过不轻啊，几个人都趴上面不动，“等我上去是吧”，没办法，几个后来的同学下去了，“你还跑的挺快，刚才没追上你，这么一会又跑那上面去了”，晕死，把我同学当成刚才参与打架的了。“你别狡辩，这么一会你还能换套衣服？刚才我看见的就是你这身衣服！”，完了，跳黄河也洗不清了。</p>
+
+<p>剩下几个在上面躺着也不敢动了，也不知道在上面躺了多长时间，反正是有个同学说看看下面什么情况时，正好就被手电照到了，得，全都被逮到了。一字排开，一个一个的问，实话实说呗，但是估计也没人信，拐卖小孩，大半夜的趴麦子地里抽烟？不是老师脑子进水就是我们脑子进水了。其实现在想想，那明明就是一只半夜叫春的猫！那声音，像极了小孩的哭声，还有那一闪一闪的光，那个位置正好是学校变压器的位置。真是脑子进水啊，但是老师也好不到哪儿去。看我膝盖上有伤疤，竟然反问我还说没打架，怎么会有伤疤？老天，我这伤口要愈合的那么快的话早就被拿去科研用了还能待在那儿让他训？</p>
+
+<p>问了有两个小时，毫无结果，废话，打架的又不是我们，自然是毫无结果，然后让我们回去睡觉了，事情还没有完，第二天开始最后一次模考，但还是叫了家长，我一看这阵势，赶紧先给家里打电话，先说明了情况，然后说自己被冤枉了，学校如果说让过来的话就口头答应然后该干吗干吗去，再打电话就说没时间。我这儿安排的妥妥当当了结果哥儿几个家长都来了而我家里说没有接到电话，马上就高考了结果还给整了件这么闹心的事，那天也不知道是谁家的猫，啥时候叫春不行非赶着个高考前几天叫，啥地方叫不行非让我们听见，整的我们还想着做做好事打击打击人贩子，简直吐血。</p>
+
+<p>最后的时刻到了，天气很好，提前过去熟悉考场，我一个人走着就过去了，大夏天的中午，路上一个人也没有，非典的时候好像也没这么厉害吧，然后看到两个上初中年纪的小女孩，看到我就跟看到怪物一样，一个劲盯着我看，脸上有东西？还是我太帅？不能丢了面子，皱着眉头好像跟人家有仇似的就走了过去，结果拐弯时路上有个什么东西来着，绊了一下，一个踉跄，把个凉拖的粘带给扯掉了，倒霉透顶，什么伪劣产品啊，真是上火。</p>
+
+<p>有同学在那边，一个月没见了还整的想的不行一样，一起吃饭，一起去他们教室逛逛，再和好多同学见了面，然后为了休息好也没怎么多呆，连个车子都没有，直接从车棚里推了一辆就走，然后，去了超市买了一个辫套，整的还好像护身符一样，回到学校时都已经天黑了，以前也没发现学校前的马路那么宽，咋那次我从车子上下来好像还要跑着穿着那条马路呢，然后给师弟挥手再见，马路上空荡荡的，他又骑上车子回学校去了。</p>
+
+<p>这边的同学也在等着我吃饭，匆匆几口，拉帮结伙的上了操场，那么多的人，还可以拿个西瓜去操场，后来西瓜皮扔在了什么地方我也已经想不起来了，然后就是有人在篮球架下弹吉他，还整的挺像那么回事，当时我也挺想弹弹的，但是为了不把人们吓跑，我和同学就又跑别的地方去转了。哦不，弹吉他应该是六月八号的晚上，应该是考完之后，时间太长，又给记混了。</p>
+
+<p>第二天早上醒来的很早，好像我有什么事的时候一般都会起的比较早，好像自己给自己的心里上好了闹钟一样。很早就起来了，又跑去宿舍楼顶踢球，对面女生宿舍楼顶人更多，有看书的，有聊天的，还有晒被子的！简直晕掉，调节心情还真有一套，高考了还起大早的出来晒被子。</p>
+
+<p>然后出发了，准考证差点忘带，同学给从床上找到，从窗户上扔了下来，拿上跑着去赶车，老师这个时候敢怒不敢言，怕影响了心情，其实像我们这样的，谈不上什么影响不影响的，到最后，结果都是一样。</p>
+
+<p>哪个考场，监考老师长的啥样，题目是啥？都已经想不起来了，只记得我把辫套戴在了手上，好像橡皮上还有什么东西，都想不想起来了，时间真的过去太长了。当时晚上和同学侃大山，零六世界杯时再相聚，看书上某某故事说十几年前如何如何，当时就老在想：这十几年还在尿尿和泥巴呢，咱啥时候也能说十几年前自己如何如何呢？一切都好像那么漫长，但眨眼之间，高考已经过去六年了。</p>
+
+<p>雨已经停了，北京已经很久没有下这么大的雨了，还记得刚到北京那年的那场大雨，下班后趟着水回家，那水都深过大腿，而转眼之间，到北京都已经两年了。</p>
+
+<p>人生有几个六年，青春有几个六年，如果罗京老师仅仅八个六年，那我现在已经开始的第五个六年该如何度过呢？当我到北京六年后，又该是怎样的心境呢？</p>
+
+<p>谨以此纪念我的高考。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">matrix-lisp</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-07-12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">自由转载-非商用-非衍生-保持署名(<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">创意共享4.0许可证</a>)</span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-01-01-euler-015/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Project Euler 第15题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'matrixlisp';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:matrix.lisp@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/matrix-lisp" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.douban.com/people/matrix-lisp/" class="iconfont icon-douban" title="douban"></a>
+  <a href="http://matrix-lisp.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2009 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">matrix-lisp</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.dce0c2513349d6ed410e4d99885aeefcb3b8fc9a34962e5b68f649e593c593d7.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48828428-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
